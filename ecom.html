@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Ecomerce</title>
+  <link rel="stylesheet" href="ecom.css">
+</head>
+
+
+<body>
+  <nav class="navi " style="display:flex  ;">
+    <h1 class="head1">Moonlight Cafe</h1>
+    <div class="dropdown"></div>
+    <ul class="nav-list">
+      <li class="dropdown">
+        <a href="#">Home</a>
+      </li>
+      <li class="dropdown">
+        <a href="#">Items <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="#">Fruits</a></li>
+          <li><a href="#">Milk Shakes</a></li>
+          <li><a href="#">Coffe</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#">Offers <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="#">Meal for two</a></li>
+          <li><a href="#">Family Pack</a></li>
+          <li><a href="#">Iftar Items</a></li>
+        </ul>
+      </li>
+    </ul>
+    </ul>
+    <div class>
+      <input type="text" placeholder="Type Your item">
+      <button id="searchbutton">Search</button>
+    </div>
+    <div style="display: flex;">
+      <i style="color: white;" class="fa-solid fa-cart-shopping">
+
+        <sub>0</sub>
+
+      </i>
+    </div>
+
+  </nav>
+
+
+  <section>
+    <!-- Hero Section: One side image, other side text and offer -->
+    <style>
+
+    </style>
+    <div class="hero">
+      <!-- Left Side: Image -->
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+          alt="Cafe">
+      </div>
+      <!-- Right Side: Text and Offer -->
+      <div class="hero-content">
+        <h1>Welcome to Moonlight Cafe</h1>
+        <p>Your one-stop destination for delicious food and drinks. Enjoy fresh fruits, milk shakes, coffee, and more!
+        </p>
+        <div class="hero-offer">
+          <i class="fa fa-gift"></i>
+          Special Offer: <span class="highlight">20% OFF</span> on all Milk Shakes this week!
+        </div>
+        <a href="#" class="hero-order-btn">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="grid1">
+      <div class="card">
+        <img src="https://www.gurneys.com/cdn/shop/files/80886A.webp?v=1729086281&width=640" alt="">
+        <h2>Black Berry</h2>
+        <p>259 Taka</p>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaqnn3I_oJTORzrNhwMKm_7KMWSt7yIp_DVg&s" alt="">
+        <h2>Orange</h2>
+        <p>120 Taka</p>
+      </div>
+      <div class="card">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour.jpg/1200px-Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour.jpg"
+          alt="">
+        <h2>Kiwifruit</h2>
+        <p>300 Taka</p>
+      </div>
+      <div class="card">
+        <img src="https://www.royalfruitz.com/wp-content/uploads/2025/05/Bangla-Lichu-400x286.jpg" alt="">
+        <h2>Lichu</h2>
+        <p>120 Taka</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div style="display: flex; justify-content: center; margin: 40px 0;">
+      <button id="orderBtn" style="
+      background: linear-gradient(90deg, #ffb347 0%, #ffcc33 100%);
+      color: #222;
+      border: none;
+      padding: 18px 48px;
+      font-size: 1.3rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(255, 204, 51, 0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Segoe UI', sans-serif;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    ">
+        <span id="orderText">Order Now</span>
+      </button>
+    </div>
+  </section>
+  <footer class="footer"
+    style="background: #222; color: #fff; padding: 40px 0 20px 0; text-align: center; margin-top: 40px;">
+    <div style="max-width: 1200px; margin: auto;">
+      <h2 style="margin-bottom: 10px; font-family: 'Segoe UI', sans-serif; letter-spacing: 2px;">Moonlight Cafe</h2>
+      <p style="margin-bottom: 20px; color: #ccc;">Thank you for visiting our website. We hope you enjoyed your
+        experience!</p>
+      <div style="margin-bottom: 20px;">
+        <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px;"><i class="fab fa-instagram"></i></a>
+        <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="color: #fff; margin: 0 10px; font-size: 20px;"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <div style="font-size: 14px; color: #888;">
+        &copy; 2024 Moonlight Cafe. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('orderBtn');
+    btn.addEventListener('mouseenter', function () {
+      btn.style.transform = 'scale(1.08) rotate(-2deg)';
+      btn.style.boxShadow = '0 8px 32px rgba(255, 204, 51, 0.4)';
+    });
+    btn.addEventListener('mouseleave', function () {
+      btn.style.transform = 'scale(1) rotate(0)';
+      btn.style.boxShadow = '0 4px 24px rgba(255, 204, 51, 0.2)';
+    });
+    btn.addEventListener('click', function () {
+      const text = document.getElementById('orderText');
+      text.textContent = 'Ordered!';
+      btn.style.background = 'linear-gradient(90deg, #43e97b 0%, #38f9d7 100%)';
+      setTimeout(() => {
+        text.textContent = 'Order Now';
+        btn.style.background = 'linear-gradient(90deg, #ffb347 0%, #ffcc33 100%)';
+      }, 2500);
+    });
+  </script>
+  <script src="/Javascript/index.js"></script>
+</body>
+</html>
