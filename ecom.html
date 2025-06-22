@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<link rel="icon" type="image/png" href="https://img.icons8.com/?size=100&id=wqvDFnWSG8kM&format=png&color=000000">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -83,30 +83,56 @@
 
   <section class="sec">
     <div class="grid1">
-      <div class="card">
+      <div class="card" data-price="259" data-discount="0.15">
         <img src="https://www.gurneys.com/cdn/shop/files/80886A.webp?v=1729086281&width=640" alt="">
         <h2>Black Berry</h2>
-        <p>259 Taka</p>
+        <p>
+          <span class="original-price">259 Taka</span>
+          <br>
+          <span class="discount-info"></span>
+          <br>
+          <span class="discounted-price"></span>
+        </p>
       </div>
-      <div class="card">
+      <div class="card" data-price="120" data-discount="0">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaqnn3I_oJTORzrNhwMKm_7KMWSt7yIp_DVg&s" alt="">
         <h2>Orange</h2>
-        <p>120 Taka</p>
+        <p>
+          <span class="original-price">120 Taka</span>
+          <br>
+          <span class="discount-info"></span>
+          <br>
+          <span class="discounted-price"></span>
+        </p>
       </div>
-      <div class="card">
+      <div class="card" data-price="300" data-discount="0.10">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour.jpg/1200px-Kiwi_%28Actinidia_chinensis%29_1_Luc_Viatour.jpg"
           alt="">
         <h2>Kiwifruit</h2>
-        <p>300 Taka</p>
+        <p>
+          <span class="original-price">300 Taka</span>
+          <br>
+          <span class="discount-info"></span>
+          <br>
+          <span class="discounted-price"></span>
+        </p>
       </div>
-      <div class="card">
+      <div class="card" data-price="120" data-discount="0.05">
         <img src="https://www.royalfruitz.com/wp-content/uploads/2025/05/Bangla-Lichu-400x286.jpg" alt="">
         <h2>Lichu</h2>
-        <p>120 Taka</p>
+        <p>
+          <span class="original-price">120 Taka</span>
+          <br>
+          <span class="discount-info"></span>
+          <br>
+          <span class="discounted-price"></span>
+        </p>
       </div>
     </div>
   </section>
+
+  
   <section>
     <div style="display: flex; justify-content: center; margin: 40px 0;">
       <button id="orderBtn" style="
@@ -167,5 +193,6 @@
     });
   </script>
   <script src="/Javascript/index.js"></script>
+  <script src="./ecom.js"></script>
 </body>
 </html>
