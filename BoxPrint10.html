@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorful Boxes</title>
+  <style>
+    #boxContainer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .green {
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>10 Colorful Boxes</h2>
+  <div id="boxContainer"></div>
+
+  <script>
+    const container = document.getElementById("boxContainer");
+
+    for (let i = 1; i <= 10; i++) {
+      const box = document.createElement("div");
+      box.classList.add("box");
+
+      if (i % 2 === 0) {
+        box.classList.add("red");
+      } else {
+        box.classList.add("green");
+      }
+
+      box.textContent = i;
+      container.appendChild(box);
+    }
+  </script>
+
+</body>
+</html>
