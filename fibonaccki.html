@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fibonacci Sequence Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f8ff;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h2>Generate First N Fibonacci Numbers</h2>
+  <input type="number" id="inputNumber" placeholder="Enter a number (e.g., 10)" />
+  <button onclick="printFibonacci()">Generate</button>
+  <div id="result"></div>
+
+  <script>
+    function printFibonacci() {
+      const n = parseInt(document.getElementById('inputNumber').value);
+      const result = document.getElementById('result');
+
+      if (isNaN(n) || n <= 0) {
+        result.textContent = "Please enter a valid positive number.";
+        return;
+      }
+
+      let fib = [];
+      for (let i = 0; i < n; i++) {
+        if (i === 0) fib.push(0);
+        else if (i === 1) fib.push(1);
+        else fib.push(fib[i - 1] + fib[i - 2]);
+      }
+
+      result.textContent = `First ${n} Fibonacci numbers:\n` + fib.join(", ");
+    }
+  </script>
+</body>
+</html>
