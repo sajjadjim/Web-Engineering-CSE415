@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylish Form with Dark Mode</title>
+<style>
+    body {
+        background: linear-gradient(135deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('https://ccitraining.edu/wp-content/uploads/2019/03/unnamed-11.png') no-repeat center/cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.95);
+        max-width: 420px;
+        margin: 80px auto;
+        padding: 40px 30px;
+        border-radius: 16px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        animation: fadeIn 0.8s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container.dark {
+        background: rgba(34, 34, 34, 0.95);
+        color: #eee;
+    }
+
+    .container h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 24px;
+    }
+
+    .container.dark h1 {
+        color: #ddd;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 6px;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .container.dark label {
+        color: #ccc;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 8px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #f9f9f9;
+        transition: all 0.3s ease;
+    }
+
+    .container.dark input {
+        background: #444;
+        border: 1px solid #666;
+        color: #eee;
+    }
+
+    .error {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        min-height: 18px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+        transform: translateY(-1px);
+    }
+
+    .toggle {
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .toggle button {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+        background: #333;
+        color: #fff;
+    }
+
+    .submitted-data {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .container.dark .submitted-data {
+        color: #eee;
+    }
+
+    @media (max-width: 500px) {
+        .container {
+            margin: 30px 16px;
+            padding: 30px 20px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="toggle">
+    <button id="darkModeBtn">Toggle Dark Mode</button>
+</div>
+
+<div class="container" id="formContainer">
+    <h1>Registration Form</h1>
+    <form id="registrationForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required minlength="3">
+        <span id="nameError" class="error"></span>
+
+        <label for="id">ID Number:</label>
+        <input type="text" id="id" name="id" required pattern="\d{3}-\d{2}-\d{4}" placeholder="xxx-xx-xxxx">
+        <span id="idError" class="error"></span>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9._%+-]+@diu\.edu\.bd$" placeholder="example@diu.edu.bd">
+        <span id="emailError" class="error"></span>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="submitted-data" id="submittedData"></div>
+</div>
+
+<script>
+    const form = document.getElementById('registrationForm');
+    const container = document.getElementById('formContainer');
+    const darkBtn = document.getElementById('darkModeBtn');
+    const submittedDataDiv = document.getElementById('submittedData');
+
+    const nameInput = document.getElementById('name');
+    const idInput = document.getElementById('id');
+    const emailInput = document.getElementById('email');
+    const nameError = document.getElementById('nameError');
+    const idError = document.getElementById('idError');
+    const emailError = document.getElementById('emailError');
+
+    darkBtn.addEventListener('click', () => {
+        container.classList.toggle('dark');
+    });
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        if (nameInput.value.trim().length < 3) {
+            nameError.textContent = "Name must be at least 3 characters.";
+            valid = false;
+        } else {
+            nameError.textContent = "";
+        }
+
+        const idPattern = /^\d{3}-\d{2}-\d{4}$/;
+        if (!idPattern.test(idInput.value)) {
+            idError.textContent = "ID must be in the format xxx-xx-xxxx.";
+            valid = false;
+        } else {
+            idError.textContent = "";
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@diu\.edu\.bd$/;
+        if (!emailPattern.test(emailInput.value)) {
+            emailError.textContent = "Email must end with @diu.edu.bd.";
+            valid = false;
+        } else {
+            emailError.textContent = "";
+        }
+
+        if (valid) {
+            submittedDataDiv.innerHTML = `
+                ✅ <strong>Submitted Data:</strong><br>
+                Name: ${nameInput.value} <br>
+                ID: ${idInput.value} <br>
+                Email: ${emailInput.value}
+            `;
+            form.reset();
+        }
+    });
+</script>
+</body>
+</html>
